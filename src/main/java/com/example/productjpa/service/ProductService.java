@@ -45,4 +45,9 @@ public class ProductService {
        List<Product> list = productRepository.findAllByNameContaining(name);
        return list;
     }
+
+    public Product findbyId(Long id) {
+        Product product = productRepository.findById(id).orElseThrow();
+        return product;
+    }
 }

@@ -25,16 +25,16 @@
   <tr th:each="product : ${products}">
     <td>
       <img th:if="${product.imageName != null}"
-           th:src="@{/uploads/{img}(img=${product.imageName})}"  width="100">
+           th:src="@{/uploads/{img}(img=${product.imageName})}" width="100">
     </td>
     <td th:text="${product.name}"></td>
     <td th:text="${product.price}"></td>
     <td th:text="${product.stock}"></td>
+    <td>
+      <a class="small-btn" th:href="@{/products/{id}(id=${product.id})}">View</a>
+    </td>
   </tr>
   </tbody>
 </table>
 </body>
 </html>
-
-
-
